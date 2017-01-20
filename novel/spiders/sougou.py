@@ -6,7 +6,8 @@ from novel.items import NovelItem
 class SougouSpider(scrapy.Spider):
     name = "sougou"
     allowed_domains = ["sougou.com"]
-    start_urls = ['http://xiaoshuo.sogou.com/c0/0_1_0_0/']
+    start_urls = ['http://xiaoshuo.sogou.com/c0/0_1_0_%s/'%i for i in range(5)]
+    # for i in range(5)
 
     def parse(self, response):
         item = NovelItem()
